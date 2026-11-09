@@ -11,5 +11,21 @@ import mbot.*;
 
 @MBotLab(world = "parking")
 public class Stretch {
+    public static void main(String[] args) {
+        /* MY GUESS:
+          Ada
+          how do i gauge this
+          i cant see the eyes.distance
+
+          correction:
+          Ada the rover - calls toString to print the name with the rover
+          true
+          false -  the wall is 223 cm in front of the sensor
+        */
+        Rover ada = new Rover("Ada");
+        System.out.println(ada);
+        System.out.println(ada.somethingAhead(500));
+        System.out.println(ada.somethingAhead(5));
+    }
 
 }
