@@ -13,25 +13,37 @@ import mbot.*;
 // SECTION B — COMMENTS: when you finish, put a // comment ABOVE every line of code,
 //    saying in YOUR OWN WORDS what that line does.
 
+// Declares CarefulBot, a robot that IS-AN MBot2 but drives more carefully.
 public class CarefulBot extends MBot2 {
 
+    // Constructor: builds a new CarefulBot.
     public CarefulBot() {
+        // Builds the MBot2 part first.
         super();
     }
 
+    // Replaces MBot2's straight with a careful version that checks for walls first.
     @Override
     public void straight(double cm) {
+        // Only drives if there is more than cm + 20 cm of space ahead.
         if (readUltrasonic() > cm + 20) {
+            // Uses MBot2's normal straight to actually drive.
             super.straight(cm);
+        // Otherwise it is too close to the wall...
         } else {
+            // Turns light 1 red as a warning.
             turnLedOn(1, 255, 0, 0);
+            // Prints that it refused to drive because it is too close.
             System.out.println("CarefulBot: not driving " + cm + " cm, too close");
         }
     }
 
+    // Replaces MBot2's run with CarefulBot's own plan.
     @Override
     public void run() {
+        // Repeats 5 times.
         for (int i = 0; i < 5; i++) {
+            // Tries to drive 40 cm, using the careful straight above.
             straight(40);
         }
     }
