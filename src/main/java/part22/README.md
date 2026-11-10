@@ -495,9 +495,9 @@ the robot. Keep your `Lapper`: we will come back to it.
 Fill this in before you push. Type your answers after the colons.
 
 ```
-Started:
-Finished:
-The line that took me the longest:
+Started:November 9th, monday
+Finished: November 10th, tuesday
+The line that took me the longest: challenge
 ```
 
 ---
