@@ -10,13 +10,21 @@ import mbot.*;
 //
 // SECTION B — COMMENTS: put a // comment ABOVE every line of code, in YOUR OWN WORDS.
 
+// Loads the "line-track" world in the simulator.
 @MBotLab(world = "line-track")
+// Declares the class that holds the program.
 public class LineRun {
+    // The starting point of the program.
     public static void main(String[] args) {
+        // Makes a rover named Tracker.
         Rover rover = new Rover("Tracker");
+        // Follows the tape for 400 steps, about halfway round.
         rover.followLine(400);
+        // Prints a halfway message.
         System.out.println("Halfway round");
+        // Follows the tape 325 more steps to finish the lap.
         rover.followLine(325);
+        // Prints that the rover finished a lap.
         System.out.println(rover + " finished a lap");
     }
 }
