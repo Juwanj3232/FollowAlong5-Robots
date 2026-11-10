@@ -11,4 +11,31 @@ import mbot.*;
 
 public class FlashyBot extends MBot2 {
 
+    public FlashyBot() {
+        super();
+    }
+
+    @Override
+    public void turnLeft(double degrees) {
+        System.out.println("Flash! Turning left " + degrees);
+        turnLedOn(1, 0, 0, 255);
+        super.turnLeft(degrees);
+        turnLedOff(1);
+    }
+
+    @Override
+    public void turnRight(double degrees) {
+        System.out.println("Flash! Turning right " + degrees);
+        turnLedOn(1, 0, 255, 0);
+        super.turnRight(degrees);
+        turnLedOff(1);
+    }
+
+    @Override
+    public void run() {
+        for (int i = 0; i < 4; i++) {
+            straight(40);
+            turnLeft(90);
+        }
+    }
 }
