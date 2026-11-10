@@ -569,9 +569,9 @@ That is called **overriding**, and `@Override` is how you say it.
 Fill this in before you push. Type your answers after the colons.
 
 ```
-Started:
-Finished:
-The line that took me the longest:
+Started: November 10th, tuesday
+Finished: November 10th, tuesday
+The line that took me the longest: challenge
 ```
 
 ---
