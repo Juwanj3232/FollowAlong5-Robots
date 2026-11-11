@@ -16,12 +16,12 @@ public class Mission {
 
     // Runs a mission with ANY kind of MBot2 (CarefulBot, FlashyBot or a plain MBot2).
     public static void mission(MBot2 bot) {
-        // Prints that the mission is starting.
-        System.out.println("Mission start");
+        // Prints that the mission is starting, and which robot it is.
+        System.out.println("Mission start: " + bot);
         // Runs this robot's own run method; which one depends on the robot's real class.
         bot.run();
-        // Prints that the mission is finished.
-        System.out.println("Mission done");
+        // Prints that the mission is finished, and the robot's final state.
+        System.out.println("Mission done: " + bot);
     }
 
     // The starting point of the program.

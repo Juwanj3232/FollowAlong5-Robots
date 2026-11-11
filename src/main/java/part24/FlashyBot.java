@@ -11,6 +11,9 @@ import mbot.*;
 
 // Declares FlashyBot, a robot that IS-AN MBot2 but flashes its light when it turns.
 public class FlashyBot extends MBot2 {
+    // Counts how many turns this robot has made.
+    private int turns;
+
 
     // Constructor: builds a new FlashyBot.
     public FlashyBot() {
@@ -29,6 +32,8 @@ public class FlashyBot extends MBot2 {
         super.turnLeft(degrees);
         // Turns light 1 off again.
         turnLedOff(1);
+        // Adds one to the turn count.
+        turns++;
     }
 
     // Replaces MBot2's turnRight with a flashy version.
@@ -42,6 +47,8 @@ public class FlashyBot extends MBot2 {
         super.turnRight(degrees);
         // Turns light 1 off again.
         turnLedOff(1);
+        // Adds one to the turn count.
+        turns++;
     }
 
     // Replaces MBot2's run with FlashyBot's own plan: drive a square.
@@ -54,5 +61,12 @@ public class FlashyBot extends MBot2 {
             // Turns left 90 degrees, using the flashy turnLeft above.
             turnLeft(90);
         }
+    }
+
+    // Replaces toString so printing a FlashyBot shows how many turns it made.
+    @Override
+    public String toString() {
+        // Gives back "FlashyBot (N turns)".
+        return "FlashyBot (" + turns + " turns)";
     }
 }

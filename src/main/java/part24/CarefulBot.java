@@ -15,6 +15,9 @@ import mbot.*;
 
 // Declares CarefulBot, a robot that IS-AN MBot2 but drives more carefully.
 public class CarefulBot extends MBot2 {
+    // Counts how many times this robot refused to drive.
+    private int refused;
+
 
     // Constructor: builds a new CarefulBot.
     public CarefulBot() {
@@ -35,6 +38,8 @@ public class CarefulBot extends MBot2 {
             turnLedOn(1, 255, 0, 0);
             // Prints that it refused to drive because it is too close.
             System.out.println("CarefulBot: not driving " + cm + " cm, too close");
+            // Adds one to the refused count.
+            refused++;
         }
     }
 
@@ -46,5 +51,12 @@ public class CarefulBot extends MBot2 {
             // Tries to drive 40 cm, using the careful straight above.
             straight(40);
         }
+    }
+
+    // Replaces toString so printing a CarefulBot shows how many moves it refused.
+    @Override
+    public String toString() {
+        // Gives back "CarefulBot (refused N moves)".
+        return "CarefulBot (refused " + refused + " moves)";
     }
 }
