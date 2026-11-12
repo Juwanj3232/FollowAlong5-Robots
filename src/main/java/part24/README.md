@@ -548,9 +548,9 @@ robot must have a `run()`"*, without writing an empty one first, like MBot2 had 
 Fill this in before you push. Type your answers after the colons.
 
 ```
-Started:
-Finished:
-The line that took me the longest:
+Started:November 10th tuesday 
+Finished: November 12th thursday 
+The line that took me the longest: challenge
 ```
 
 ---
